@@ -140,6 +140,9 @@ class StandaloneRouting extends Component {
         seriesInstanceUIDs,
       } = await this.parseQueryAndRetrieveDICOMWebData(query);
 
+      //set window title
+      document.title = `${studies[0].seriesList[0].seriesModality} - ${studies[0].patientName}`;
+
       if (studies) {
         const {
           studies: updatedStudies,
@@ -164,7 +167,9 @@ class StandaloneRouting extends Component {
   render() {
     const message = this.state.error
       ? `Error: ${JSON.stringify(this.state.error)}`
-      : 'Loading...';
+      : 'Carregando...';
+    console.log(this.state);
+
     if (this.state.error || this.state.loading) {
       return <NotFound message={message} showGoBackButton={this.state.error} />;
     }

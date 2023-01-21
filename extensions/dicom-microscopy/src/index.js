@@ -16,7 +16,7 @@ export default {
   getViewportModule({ servicesManager }) {
     return props => {
       return (
-        <React.Suspense fallback={<div>Loading...</div>}>
+        <React.Suspense fallback={<div>Carregando...</div>}>
           <Component {...props} servicesManager={servicesManager} />
         </React.Suspense>
       );

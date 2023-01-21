@@ -140,7 +140,7 @@ function StudyListRoute(props) {
   if (searchStatus.error) {
     return <div>Error: {JSON.stringify(searchStatus.error)}</div>;
   } else if (studies === [] && !activeModalId) {
-    return <div>Loading...</div>;
+    return <div>Carregando...</div>;
   }
 
   let healthCareApiButtons = null;
@@ -427,7 +427,7 @@ function _sortStudies(studies, field, order) {
   });
 
   // Sort by field
-  sortedStudies.sort(function(a, b) {
+  sortedStudies.sort(function (a, b) {
     let fieldA = a[field];
     let fieldB = b[field];
     if (field === 'StudyDate') {

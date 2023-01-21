@@ -35,7 +35,7 @@ class LoadingIndicator extends PureComponent {
           <div className="imageViewerLoadingIndicator loadingIndicator">
             <div className="indicatorContents">
               <p>
-                {this.props.t('Loading...')}
+                {this.props.t('Carregando...')}
                 <i className="fa fa-spin fa-circle-o-notch fa-fw" />
                 {percComplete}
               </p>

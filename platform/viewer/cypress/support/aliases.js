@@ -1,36 +1,36 @@
 //Creating aliases for Cornerstone tools buttons
 export function initCornerstoneToolsAliases() {
-  cy.get('[data-cy="stack scroll"]').as('stackScrollBtn');
-  cy.get('[data-cy="zoom"]').as('zoomBtn');
+  // cy.get('[data-cy="stack scroll"]').as('stackScrollBtn');
   cy.get('[data-cy="levels"]').as('levelsBtn');
+  cy.get('[data-cy="zoom"]').as('zoomBtn');
   cy.get('[data-cy="pan"]').as('panBtn');
   cy.get('[data-cy="length"]').as('lengthBtn');
   cy.get('[data-cy="annotate"]').as('annotateBtn');
   cy.get('[data-cy="angle"]').as('angleBtn');
   cy.get('[data-cy="reset"]').as('resetBtn');
   cy.get('[data-cy="cine"]').as('cineBtn');
-  cy.get('[data-cy="more"]').as('moreBtn');
   cy.get('[data-cy="layout"]').as('layoutBtn');
   cy.get('.viewport-element').as('viewport');
+  cy.get('[data-cy="more"]').as('moreBtn');
 }
 
 //Creating aliases for Common page elements
 export function initCommonElementsAliases() {
-  cy.get(
-    '.pull-right > .RoundedButtonGroup > .roundedButtonWrapper:first-of-type > .roundedButton'
-  ).as('measurementsBtn');
+  // cy.get(
+  //   '.pull-right > .RoundedButtonGroup > .roundedButtonWrapper:first-of-type > .roundedButton'
+  // ).as('measurementsBtn');
   cy.get('.viewport-element').as('viewport');
   cy.get('section.sidepanel.from-right').as('measurementsPanel');
   cy.get(
     '.pull-left > .RoundedButtonGroup > .roundedButtonWrapper > .roundedButton'
   ).as('seriesBtn');
   cy.get('section.sidepanel.from-left').as('seriesPanel');
-  cy.get('div.OHIFCornerstoneViewportOverlay > div.bottom-left.overlay-element > div').as(
-    'viewportInfoBottomLeft'
-  );
-  cy.get('div.OHIFCornerstoneViewportOverlay > div.bottom-right.overlay-element > div').as(
-    'viewportInfoBottomRight'
-  );
+  cy.get(
+    'div.OHIFCornerstoneViewportOverlay > div.bottom-left.overlay-element > div'
+  ).as('viewportInfoBottomLeft');
+  cy.get(
+    'div.OHIFCornerstoneViewportOverlay > div.bottom-right.overlay-element > div'
+  ).as('viewportInfoBottomRight');
   cy.get('.left-mid.orientation-marker').as('viewportInfoMidLeft');
   cy.get('.top-mid.orientation-marker').as('viewportInfoMidTop');
 }

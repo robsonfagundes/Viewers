@@ -1,5 +1,5 @@
 describe('OHIF User Preferences', () => {
-  context('Study List Page', function() {
+  context('Study List Page', function () {
     before(() => {
       cy.visit('/');
     });
@@ -9,7 +9,7 @@ describe('OHIF User Preferences', () => {
       cy.openPreferences();
     });
 
-    it('checks displayed information on User Preferences modal', function() {
+    it('checks displayed information on User Preferences modal', function () {
       cy.initPreferencesModalAliases();
       //Check Title
       cy.get('@preferencesModal').should('contain.text', 'User Preferences');
@@ -32,7 +32,7 @@ describe('OHIF User Preferences', () => {
       cy.get('[data-cy="close-button"]').click();
     });
 
-    it('checks translation by selecting Spanish language', function() {
+    it('checks translation by selecting Spanish language', function () {
       cy.selectPreferencesTab('@userPreferencesGeneralTab');
 
       // Language dropdown should be displayed
@@ -62,7 +62,7 @@ describe('OHIF User Preferences', () => {
       cy.get('[data-cy="options-menu"]').click();
     });
 
-    it('checks if user can cancel the language selection and application will be in "English (USA)"', function() {
+    it('checks if user can cancel the language selection and application will be in "English (USA)"', function () {
       // Set language to English and save
       cy.setLanguage('English (USA)');
 
@@ -90,7 +90,7 @@ describe('OHIF User Preferences', () => {
       cy.get('[data-cy="options-menu"]').click();
     });
 
-    it('checks if user can restore to default the language selection and application will be in "English (USA)"', function() {
+    it('checks if user can restore to default the language selection and application will be in "English (USA)"', function () {
       // Set language to Spanish
       cy.setLanguage('Spanish');
 
@@ -136,7 +136,7 @@ describe('OHIF User Preferences', () => {
       cy.get('[data-cy="options-menu"]').click();
     });
 
-    it('checks if W/L Preferences table is being displayed in the Window Level tab', function() {
+    it('checks if W/L Preferences table is being displayed in the Window Level tab', function () {
       //Navigate to Window Level tab
       cy.selectPreferencesTab('@userPreferencesWindowLevelTab');
 
@@ -153,7 +153,7 @@ describe('OHIF User Preferences', () => {
         .should('be.greaterThan', 1);
     });
 
-    it('checks if Preferences set in Study List Page will be consistent on Viewer Page', function() {
+    it('checks if Preferences set in Study List Page will be consistent on Viewer Page', function () {
       // Go go hotkeys tab
       cy.selectPreferencesTab('@userPreferencesHotkeysTab');
 
@@ -212,7 +212,7 @@ describe('OHIF User Preferences', () => {
     });
   });
 
-  context('Study Viewer Page', function() {
+  context('Study Viewer Page', function () {
     before(() => {
       cy.checkStudyRouteInViewer(
         '1.2.840.113619.2.5.1762583153.215519.978957063.78'
@@ -239,7 +239,7 @@ describe('OHIF User Preferences', () => {
       });
     });
 
-    it('checks displayed information on User Preferences modal', function() {
+    it('checks displayed information on User Preferences modal', function () {
       cy.get('@preferencesModal').should('contain.text', 'User Preferences');
       cy.get('@userPreferencesHotkeysTab')
         .should('have.text', 'Hotkeys')
@@ -256,7 +256,7 @@ describe('OHIF User Preferences', () => {
       cy.get('@saveBtn').should('have.text', 'Save');
     });
 
-    it('checks translation by selecting Spanish language', function() {
+    it('checks translation by selecting Spanish language', function () {
       cy.selectPreferencesTab('@userPreferencesGeneralTab');
 
       // Language dropdown should be displayed
@@ -283,7 +283,7 @@ describe('OHIF User Preferences', () => {
         .should('contain.text', 'Preferencias');
     });
 
-    it('checks if user can cancel the language selection and application will be in "English (USA)"', function() {
+    it('checks if user can cancel the language selection and application will be in "English (USA)"', function () {
       // Set language to English and save
       cy.setLanguage('English (USA)');
 
@@ -308,7 +308,7 @@ describe('OHIF User Preferences', () => {
         .should('contain.text', 'Preferences');
     });
 
-    it('checks if user can restore to default the language selection and application will be in "English (USA)', function() {
+    it('checks if user can restore to default the language selection and application will be in "English (USA)', function () {
       cy.selectPreferencesTab('@userPreferencesGeneralTab');
 
       // Language dropdown should be displayed
@@ -333,7 +333,6 @@ describe('OHIF User Preferences', () => {
         .scrollIntoView()
         .click();
 
-
       // Header should be in "English (USA)""
       cy.get('.research-use')
         .scrollIntoView()
@@ -351,7 +350,7 @@ describe('OHIF User Preferences', () => {
         .should('contain.text', 'Preferences');
     });
 
-    it('checks new hotkeys for "Rotate Right" and "Rotate Left"', function() {
+    it('checks new hotkeys for "Rotate Right" and "Rotate Left"', function () {
       // Go go hotkeys tab
       cy.selectPreferencesTab('@userPreferencesHotkeysTab');
 
@@ -386,7 +385,7 @@ describe('OHIF User Preferences', () => {
       cy.get('@viewportInfoMidTop').should('contains.text', 'A');
     });
 
-    it('checks new hotkeys for "Next" and "Previous" Image on Viewport', function() {
+    it('checks new hotkeys for "Next" and "Previous" Image on Viewport', function () {
       // Update hotkeys for 'Next/Previous Viewport'
       cy.selectPreferencesTab('@userPreferencesHotkeysTab');
 
@@ -444,7 +443,7 @@ describe('OHIF User Preferences', () => {
       cy.setLayout(1, 1);
     });
 
-    it('checks error message when duplicated hotkeys are inserted', function() {
+    it('checks error message when duplicated hotkeys are inserted', function () {
       // Go go hotkeys tab
       cy.selectPreferencesTab('@userPreferencesHotkeysTab');
 
@@ -461,7 +460,7 @@ describe('OHIF User Preferences', () => {
       });
     });
 
-    it('checks error message when invalid hotkey is inserted', function() {
+    it('checks error message when invalid hotkey is inserted', function () {
       // Go go hotkeys tab
       cy.selectPreferencesTab('@userPreferencesHotkeysTab');
 
@@ -478,7 +477,7 @@ describe('OHIF User Preferences', () => {
       });
     });
 
-    it('checks error message when only modifier keys are inserted', function() {
+    it('checks error message when only modifier keys are inserted', function () {
       // Go go hotkeys tab
       cy.selectPreferencesTab('@userPreferencesHotkeysTab');
 
@@ -513,7 +512,7 @@ describe('OHIF User Preferences', () => {
       );
     });
 
-    it('checks if user can cancel changes made on User Preferences Hotkeys tab', function() {
+    it('checks if user can cancel changes made on User Preferences Hotkeys tab', function () {
       // Go go hotkeys tab
       cy.selectPreferencesTab('@userPreferencesHotkeysTab');
 
@@ -546,7 +545,7 @@ describe('OHIF User Preferences', () => {
       });
     });
 
-    it('checks if user can reset to default values on User Preferences Hotkeys tab', function() {
+    it('checks if user can reset to default values on User Preferences Hotkeys tab', function () {
       // Go go hotkeys tab
       cy.selectPreferencesTab('@userPreferencesHotkeysTab');
 
@@ -586,7 +585,7 @@ describe('OHIF User Preferences', () => {
     });
   });
 
-  context('W/L Preset Preferences', function() {
+  context('W/L Preset Preferences', function () {
     before(() => {
       cy.checkStudyRouteInViewer(
         '1.2.840.113619.2.5.1762583153.215519.978957063.78'
@@ -603,7 +602,7 @@ describe('OHIF User Preferences', () => {
       cy.selectPreferencesTab('@userPreferencesWindowLevelTab');
     });
 
-    it('checks if W/L Preferences table is being displayed in the Window Level tab', function() {
+    it('checks if W/L Preferences table is being displayed in the Window Level tab', function () {
       //Check table header
       cy.get('.wlRow.header')
         .should('contains.text', 'Preset')
@@ -659,7 +658,7 @@ describe('OHIF User Preferences', () => {
     //   );
     // });
 
-    it('checks if user can remove an existing W/L preset', function() {
+    it('checks if user can remove an existing W/L preset', function () {
       let description = ':nth-child(3) > .description > .preferencesInput';
       let window = ':nth-child(3) > .window > .preferencesInput';
       let level = ':nth-child(3) > .level > .preferencesInput';
@@ -721,7 +720,7 @@ describe('OHIF User Preferences', () => {
     //   cy.get(level).should('have.value', '333');
     // });
 
-    it('checks if user can change the W/L by triggering different hotkeys with W/L presets', function() {
+    it('checks if user can change the W/L by triggering different hotkeys with W/L presets', function () {
       // Close User Preferences modal
       cy.get('[data-cy="close-button"]').click();
       // Check if hotkey preset is working on viewport
@@ -739,7 +738,7 @@ describe('OHIF User Preferences', () => {
       );
     });
 
-    it('checks if user can change the W/L by triggering different hotkeys with W/L presets on multiple viewports', function() {
+    it('checks if user can change the W/L by triggering different hotkeys with W/L presets on multiple viewports', function () {
       // Close User Preferences modal
       cy.get('[data-cy="close-button"]').click();
 

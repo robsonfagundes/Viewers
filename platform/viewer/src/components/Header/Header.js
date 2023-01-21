@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { Dropdown, AboutContent, withModal } from '@ohif/ui';
 //
 import { UserPreferences } from './../UserPreferences';
-import OHIFLogo from '../OHIFLogo/OHIFLogo.js';
+// import OHIFLogo from '../OHIFLogo/OHIFLogo.js';
 import './Header.css';
 
 function Header(props) {
@@ -62,8 +62,8 @@ function Header(props) {
 
   return (
     <>
-      <div className="notification-bar">{t('INVESTIGATIONAL USE ONLY')}</div>
-      <div
+      {/* <div className="notification-bar">{t('INVESTIGATIONAL USE ONLY')}</div> */}
+      {/* <div
         className={classNames('entry-header', { 'header-big': useLargeLogo })}
       >
         <div className="header-left-box">
@@ -90,12 +90,7 @@ function Header(props) {
             </Link>
           )}
         </div>
-
-        <div className="header-menu">
-          <span className="research-use">{t('INVESTIGATIONAL USE ONLY')}</span>
-          <Dropdown title={t('Options')} list={options} align="right" />
-        </div>
-      </div>
+      </div> */}
     </>
   );
 }
@@ -115,8 +110,8 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  useLargeLogo: false,
-  children: OHIFLogo(),
+  // useLargeLogo: false,
+  // children: OHIFLogo(),
 };
 
 export default withTranslation(['Header', 'AboutModal'])(

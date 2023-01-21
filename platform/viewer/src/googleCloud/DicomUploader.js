@@ -43,7 +43,7 @@ export default class DicomUploader extends Component {
   percents() {
     return parseInt(
       (100 * this.state.uploadedList.length) /
-        Object.keys(this.state.files).length
+      Object.keys(this.state.files).length
     );
   }
 
@@ -95,7 +95,9 @@ export default class DicomUploader extends Component {
       uploadContext === this.state.uploadContext &&
       this.uploadCallback.call(this, fileId, error);
 
-    dicomUploader.setRetrieveAuthHeaderFunction(this.props.retrieveAuthHeaderFunction);
+    dicomUploader.setRetrieveAuthHeaderFunction(
+      this.props.retrieveAuthHeaderFunction
+    );
 
     dicomUploader.smartUpload(
       files.target.files,

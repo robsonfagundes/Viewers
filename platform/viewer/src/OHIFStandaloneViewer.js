@@ -5,7 +5,12 @@ import { Route, Switch } from 'react-router-dom';
 import { NProgress } from '@tanem/react-nprogress';
 import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
-import { ViewerbaseDragDropContext, ErrorBoundary, asyncComponent, retryImport } from '@ohif/ui';
+import {
+  ViewerbaseDragDropContext,
+  ErrorBoundary,
+  asyncComponent,
+  retryImport,
+} from '@ohif/ui';
 import { SignoutCallbackComponent } from 'redux-oidc';
 import * as RoutesUtil from './routes/routesUtil';
 
@@ -13,11 +18,15 @@ import NotFound from './routes/NotFound.js';
 import { Bar, Container } from './components/LoadingBar/';
 import './OHIFStandaloneViewer.css';
 import './variables.css';
-import './theme-tide.css';
+// import './theme-tide.css';
+import './theme-rdicom.css';
+
 // Contexts
 import AppContext from './context/AppContext';
 const CallbackPage = asyncComponent(() =>
-  retryImport(() => import(/* webpackChunkName: "CallbackPage" */ './routes/CallbackPage.js'))
+  retryImport(() =>
+    import(/* webpackChunkName: "CallbackPage" */ './routes/CallbackPage.js')
+  )
 );
 
 class OHIFStandaloneViewer extends Component {
@@ -202,10 +211,10 @@ class OHIFStandaloneViewer extends Component {
                   {match === null ? (
                     <></>
                   ) : (
-                      <ErrorBoundary context={match.url}>
-                        <Component match={match} location={this.props.location} />
-                      </ErrorBoundary>
-                    )}
+                    <ErrorBoundary context={match.url}>
+                      <Component match={match} location={this.props.location} />
+                    </ErrorBoundary>
+                  )}
                 </CSSTransition>
               )}
             </Route>

@@ -68,6 +68,11 @@ const commandsModule = ({ servicesManager }) => {
         cornerstone.reset(enabledElement);
       }
     },
+    fullScreen: ({ viewports }) => {
+      const element = document.getElementById('root');
+
+      element.requestFullscreen();
+    },
     invertViewport: ({ viewports }) => {
       const enabledElement = getEnabledElement(viewports.activeViewportIndex);
 
@@ -369,6 +374,11 @@ const commandsModule = ({ servicesManager }) => {
     },
     resetViewport: {
       commandFn: actions.resetViewport,
+      storeContexts: ['viewports'],
+      options: {},
+    },
+    fullScreen: {
+      commandFn: actions.fullScreen,
       storeContexts: ['viewports'],
       options: {},
     },

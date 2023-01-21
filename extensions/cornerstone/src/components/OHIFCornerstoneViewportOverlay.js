@@ -88,9 +88,8 @@ class OHIFCornerstoneViewportOverlay extends PureComponent {
 
     const frameRate = formatNumberPrecision(1000 / frameTime, 1);
     const compression = getCompression(imageId);
-    const wwwc = `W: ${
-      windowWidth.toFixed ? windowWidth.toFixed(0) : windowWidth
-    } L: ${windowWidth.toFixed ? windowCenter.toFixed(0) : windowCenter}`;
+    const wwwc = `W: ${windowWidth.toFixed ? windowWidth.toFixed(0) : windowWidth
+      } L: ${windowWidth.toFixed ? windowCenter.toFixed(0) : windowCenter}`;
     const imageDimensions = `${columns} x ${rows}`;
 
     const { imageIndex, stackSize } = this.props;

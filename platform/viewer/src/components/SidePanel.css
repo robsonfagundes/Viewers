@@ -3,7 +3,7 @@
   flex: 1;
   flex-flow: row nowrap;
   align-items: stretch;
-  height: calc(100% - var(--toolbar-height) - var(--top-bar-height));
+  height: calc(100% - var(--toolbar-height));
   width: 100%;
   overflow: hidden;
 }
@@ -12,7 +12,7 @@
   flex: 1;
   height: 100%;
   transition: var(--sidepanel-transition);
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 
 .from-left {
@@ -43,6 +43,6 @@
 @media only screen and (max-width: 768px) {
   /* Account for "Investigational Use" banner height */
   .FlexboxLayout {
-    height: calc(100% - var(--toolbar-height) - var(--top-bar-height) - 16px);
+    height: calc(100% - var(--toolbar-height));
   }
 }

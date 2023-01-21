@@ -2,7 +2,7 @@
   display: none;
 }
 .OHIFCornerstoneViewportOverlay {
-  color: #9ccef9;
+  color: #936FD4;
 }
 .OHIFCornerstoneViewportOverlay .overlay-element {
   position: absolute;
@@ -63,9 +63,9 @@
 }
 
 .OHIFCornerstoneViewportOverlay svg {
-  color: #9ccef9;
-  fill: #9ccef9;
-  stroke: #9ccef9;
+  color: #936FD4;
+  fill: #936FD4;
+  stroke: #936FD4;
   background-color: transparent;
   margin: 2px;
   width: 18px;

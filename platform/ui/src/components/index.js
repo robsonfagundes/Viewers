@@ -59,5 +59,5 @@ export {
   Tooltip,
   AboutContent,
   OHIFModal,
-  ErrorPage
+  ErrorPage,
 };
